@@ -58,6 +58,7 @@ namespace Bebidis
             this.loginButton.TabIndex = 19;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // Login
             // 

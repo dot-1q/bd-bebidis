@@ -19,27 +19,32 @@ namespace Bebidis
 
         private void manageInventory_Click(object sender, EventArgs e)
         {
-
+            InventoryProdutsMenu invProdMenu = new InventoryProdutsMenu();
+            invProdMenu.Show();
         }
 
         private void setDelivery_Click(object sender, EventArgs e)
         {
-
+            PlaceDelivery deliveryMenu = new PlaceDelivery();
+            deliveryMenu.Show();
         }
 
         private void routesHistory_Click(object sender, EventArgs e)
         {
-
+            Roles rolesMenu = new Roles();
+            rolesMenu.Show();
         }
 
         private void salesHistory_Click(object sender, EventArgs e)
         {
-
+            Vehicles vehiclesMenu = new Vehicles();
+            vehiclesMenu.Show();
         }
 
         private void salesSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
     }
 }

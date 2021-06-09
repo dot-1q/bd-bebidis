@@ -34,11 +34,12 @@ namespace Bebidis
             this.checkStock = new System.Windows.Forms.Button();
             this.checkPrice = new System.Windows.Forms.Button();
             this.checkPricesAndStock = new System.Windows.Forms.ListBox();
+            this.menuVenda = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // setZone
             // 
-            this.setZone.Location = new System.Drawing.Point(330, 12);
+            this.setZone.Location = new System.Drawing.Point(396, 12);
             this.setZone.Name = "setZone";
             this.setZone.Size = new System.Drawing.Size(100, 45);
             this.setZone.TabIndex = 14;
@@ -47,11 +48,11 @@ namespace Bebidis
             // 
             // makeSell
             // 
-            this.makeSell.Location = new System.Drawing.Point(224, 12);
+            this.makeSell.Location = new System.Drawing.Point(625, 12);
             this.makeSell.Name = "makeSell";
             this.makeSell.Size = new System.Drawing.Size(100, 45);
             this.makeSell.TabIndex = 13;
-            this.makeSell.Text = "Venda";
+            this.makeSell.Text = "Confirmar Venda";
             this.makeSell.UseVisualStyleBackColor = true;
             // 
             // checkStock
@@ -79,14 +80,24 @@ namespace Bebidis
             this.checkPricesAndStock.ItemHeight = 15;
             this.checkPricesAndStock.Location = new System.Drawing.Point(12, 89);
             this.checkPricesAndStock.Name = "checkPricesAndStock";
-            this.checkPricesAndStock.Size = new System.Drawing.Size(754, 349);
+            this.checkPricesAndStock.Size = new System.Drawing.Size(484, 349);
             this.checkPricesAndStock.TabIndex = 15;
+            // 
+            // menuVenda
+            // 
+            this.menuVenda.FormattingEnabled = true;
+            this.menuVenda.ItemHeight = 15;
+            this.menuVenda.Location = new System.Drawing.Point(513, 89);
+            this.menuVenda.Name = "menuVenda";
+            this.menuVenda.Size = new System.Drawing.Size(340, 349);
+            this.menuVenda.TabIndex = 16;
             // 
             // SalesPersonMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(873, 452);
+            this.Controls.Add(this.menuVenda);
             this.Controls.Add(this.checkPricesAndStock);
             this.Controls.Add(this.setZone);
             this.Controls.Add(this.makeSell);
@@ -105,5 +116,6 @@ namespace Bebidis
         private System.Windows.Forms.Button checkStock;
         private System.Windows.Forms.Button checkPrice;
         private System.Windows.Forms.ListBox checkPricesAndStock;
+        private System.Windows.Forms.ListBox menuVenda;
     }
 }

@@ -8,18 +8,11 @@ using System.Windows.Forms;
 
 namespace Bebidis
 {
-    public partial class Login : Form
+    public partial class PlaceDelivery : Form
     {
-        public Login()
+        public PlaceDelivery()
         {
             InitializeComponent();
-        }
-
-        private void loginButton_Click(object sender, EventArgs e)
-        {
-            ManagerMenu menu = new ManagerMenu();
-            menu.Show();
-            this.Hide();
         }
     }
 }

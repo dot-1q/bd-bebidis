@@ -29,10 +29,9 @@ namespace Bebidis
         /// </summary>
         private void InitializeComponent()
         {
-            this.manageInventory = new System.Windows.Forms.Button();
+            this.manageInventoryAndProducts = new System.Windows.Forms.Button();
             this.setDelivery = new System.Windows.Forms.Button();
             this.setRoles = new System.Windows.Forms.Button();
-            this.manageProducts = new System.Windows.Forms.Button();
             this.salesHistory = new System.Windows.Forms.Button();
             this.routesHistory = new System.Windows.Forms.Button();
             this.visualizeHistoryQuery = new System.Windows.Forms.ListBox();
@@ -41,15 +40,15 @@ namespace Bebidis
             this.manageVehicles = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // manageInventory
+            // manageInventoryAndProducts
             // 
-            this.manageInventory.Location = new System.Drawing.Point(12, 12);
-            this.manageInventory.Name = "manageInventory";
-            this.manageInventory.Size = new System.Drawing.Size(120, 45);
-            this.manageInventory.TabIndex = 0;
-            this.manageInventory.Text = "Inventário";
-            this.manageInventory.UseVisualStyleBackColor = true;
-            this.manageInventory.Click += new System.EventHandler(this.manageInventory_Click);
+            this.manageInventoryAndProducts.Location = new System.Drawing.Point(12, 12);
+            this.manageInventoryAndProducts.Name = "manageInventoryAndProducts";
+            this.manageInventoryAndProducts.Size = new System.Drawing.Size(120, 45);
+            this.manageInventoryAndProducts.TabIndex = 0;
+            this.manageInventoryAndProducts.Text = "Gerir Inventário / Produtos";
+            this.manageInventoryAndProducts.UseVisualStyleBackColor = true;
+            this.manageInventoryAndProducts.Click += new System.EventHandler(this.manageInventory_Click);
             // 
             // setDelivery
             // 
@@ -69,15 +68,6 @@ namespace Bebidis
             this.setRoles.TabIndex = 2;
             this.setRoles.Text = "Cargos";
             this.setRoles.UseVisualStyleBackColor = true;
-            // 
-            // manageProducts
-            // 
-            this.manageProducts.Location = new System.Drawing.Point(476, 12);
-            this.manageProducts.Name = "manageProducts";
-            this.manageProducts.Size = new System.Drawing.Size(120, 45);
-            this.manageProducts.TabIndex = 3;
-            this.manageProducts.Text = "Gerir Produtos";
-            this.manageProducts.UseVisualStyleBackColor = true;
             // 
             // salesHistory
             // 
@@ -141,7 +131,7 @@ namespace Bebidis
             // 
             // manageVehicles
             // 
-            this.manageVehicles.Location = new System.Drawing.Point(620, 12);
+            this.manageVehicles.Location = new System.Drawing.Point(480, 12);
             this.manageVehicles.Name = "manageVehicles";
             this.manageVehicles.Size = new System.Drawing.Size(145, 45);
             this.manageVehicles.TabIndex = 10;
@@ -159,10 +149,9 @@ namespace Bebidis
             this.Controls.Add(this.visualizeHistoryQuery);
             this.Controls.Add(this.routesHistory);
             this.Controls.Add(this.salesHistory);
-            this.Controls.Add(this.manageProducts);
             this.Controls.Add(this.setRoles);
             this.Controls.Add(this.setDelivery);
-            this.Controls.Add(this.manageInventory);
+            this.Controls.Add(this.manageInventoryAndProducts);
             this.Name = "ManagerMenu";
             this.Text = "Bebidis Warehouse Manager";
             this.ResumeLayout(false);
@@ -171,10 +160,9 @@ namespace Bebidis
 
         #endregion
 
-        private System.Windows.Forms.Button manageInventory;
+        private System.Windows.Forms.Button manageInventoryAndProducts;
         private System.Windows.Forms.Button setDelivery;
         private System.Windows.Forms.Button setRoles;
-        private System.Windows.Forms.Button manageProducts;
         private System.Windows.Forms.Button salesHistory;
         private System.Windows.Forms.Button routesHistory;
         private System.Windows.Forms.ListBox visualizeHistoryQuery;
