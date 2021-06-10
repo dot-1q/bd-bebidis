@@ -81,6 +81,7 @@ CREATE TABLE BW.Produto(
     codigo      INT NOT NULL,
     preco       MONEY CHECK(preco>=0),
     nome        VARCHAR(30),
+	peso		DECIMAL(4,1) NOT NULL,
 
     PRIMARY KEY(codigo)
 );
