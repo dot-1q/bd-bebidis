@@ -35,7 +35,6 @@ CREATE TABLE BW.Funcionario(
     armazem_trabalha VARCHAR(40),
     
     PRIMARY KEY (num_funcionario),
-    UNIQUE (nome),
     FOREIGN KEY (armazem_trabalha) REFERENCES BW.Armazem(localizacao) ON DELETE SET NULL ON UPDATE CASCADE
 );
 CREATE TABLE BW.Gerente(
@@ -69,7 +68,7 @@ CREATE TABLE BW.PromotorVendas(
 );
 CREATE TABLE BW.Encomenda(
     numero      INT NOT NULL,
-    data        DATE,
+    data_realizacao    DATE,
     transportador INT,
     veiculo_transp VARCHAR(10),
 
@@ -105,7 +104,7 @@ CREATE TABLE BW.Inventario(
 );
 CREATE TABLE BW.Venda(
     numero  INT NOT NULL,
-    data    DATE,
+    data_realizacao    DATE,
     preco   MONEY CHECK(preco>=0),
     feita_por INT,
 
@@ -116,7 +115,7 @@ CREATE TABLE BW.Comprador(
     num_comprador   INT NOT NULL,
     n_telefone      INT CHECK(n_telefone>0),
     nome            VARCHAR(30),
-    localizaçao     VARCHAR(40),
+    localizacao     VARCHAR(40),
 
     PRIMARY KEY(num_comprador),
 );
@@ -162,23 +161,23 @@ CREATE TABLE BW.Ligeiro(
 );
 CREATE TABLE BW.Rotas(
     id      INT NOT NULL,
-    data    DATE,
 
     PRIMARY KEY(id)
 );
 CREATE TABLE BW.FezRota(
     id      INT NOT NULL,
     carro_usado VARCHAR(10) NOT NULL,
+	data_realizacao 		DATE,
 
-    PRIMARY KEY(id),
+    PRIMARY KEY(id,carro_usado,data_realizacao),
     FOREIGN KEY(id) REFERENCES BW.Rotas(id) ON UPDATE CASCADE,
     FOREIGN KEY(carro_usado) REFERENCES BW.Automoveis(matricula) ON UPDATE CASCADE,
 );
 CREATE TABLE BW.ZonasRotas(
     id      INT NOT NULL,
-    lista_zona VARCHAR(30) NOT NULL,
+    zona VARCHAR(30) NOT NULL,
 
-    PRIMARY KEY(id),
+    PRIMARY KEY(id,zona),
     FOREIGN KEY(id) REFERENCES BW.Rotas(id) ON UPDATE CASCADE,
 );
 -- ALTER TABLES PARA FOREIGN KEYS
