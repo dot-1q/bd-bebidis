@@ -86,11 +86,11 @@ CREATE TABLE BW.Produto(
 );
 CREATE TABLE BW.Contem(
     num_encomenda   INT NOT NULL,
-    codigo_prod     INT NOT NULL,
+    num_venda     INT NOT NULL,
 
-    PRIMARY KEY(num_encomenda,codigo_prod),
+    PRIMARY KEY(num_encomenda,num_venda),
     FOREIGN KEY(num_encomenda) REFERENCES BW.Encomenda(numero),
-    FOREIGN KEY(codigo_prod) REFERENCES BW.Produto(codigo)
+	-- FOREIGN KEY NUMVENDA AT THE END
 );
 CREATE TABLE BW.Inventario(
     codigo      INT NOT NULL,
@@ -130,6 +130,7 @@ CREATE TABLE BW.VendaAo(
 CREATE TABLE BW.VendaSobre(
     num_venda       INT NOT NULL,
     produtos         INT NOT NULL,
+	quantidade			INT,
 
     PRIMARY KEY(num_venda,produtos),
     FOREIGN KEY(num_venda) REFERENCES BW.Venda(numero) ON UPDATE CASCADE,
@@ -182,3 +183,4 @@ CREATE TABLE BW.ZonasRotas(
 );
 -- ALTER TABLES PARA FOREIGN KEYS
 ALTER TABLE BW.Encomenda    ADD FOREIGN KEY(veiculo_transp)     REFERENCES BW.Pesado(matricula);
+ALTER TABLE BW.Contem 		ADD FOREIGN KEY(num_venda)		REFERENCES BW.Venda(numero);
