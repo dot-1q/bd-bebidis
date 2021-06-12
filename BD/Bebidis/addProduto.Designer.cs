@@ -1,4 +1,4 @@
-﻿namespace bebidis_projeto
+﻿namespace Bebidis
 {
     partial class addProduto
     {

@@ -14,5 +14,12 @@ namespace Bebidis
         {
             InitializeComponent();
         }
+
+        private void insertProduct_Click(object sender, EventArgs e)
+        {
+            addProduto addMenu = new addProduto();
+            addMenu.Show();
+
+        }
     }
 }

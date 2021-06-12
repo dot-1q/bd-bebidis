@@ -5,7 +5,7 @@
 */
 
 CREATE VIEW BW.viewVendas AS
-SELECT        v.numero AS Venda, BW.Funcionario.nome AS Vendedor, v.data_realizacao AS Data, v.preco AS Valor, BW.getPeso(v.numero) AS [Peso Total], BW.getProdutos(v.numero) AS Produtos
+SELECT        v.numero AS Venda, BW.Funcionario.nome AS Vendedor, v.data_realizacao AS Data, v.preco AS Valor, BW.getVendaPeso(v.numero) AS [Peso Total], BW.getProdutos(v.numero) AS Produtos
 FROM            BW.Venda AS v INNER JOIN
                          BW.PromotorVendas ON v.feita_por = BW.PromotorVendas.num_funcionario INNER JOIN
                          BW.Funcionario ON BW.PromotorVendas.num_funcionario = BW.Funcionario.num_funcionario

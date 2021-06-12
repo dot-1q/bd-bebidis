@@ -62,6 +62,7 @@ namespace Bebidis
             this.insertProduct.TabIndex = 2;
             this.insertProduct.Text = "Inserir Produto";
             this.insertProduct.UseVisualStyleBackColor = true;
+            this.insertProduct.Click += new System.EventHandler(this.insertProduct_Click);
             // 
             // updateName
             // 

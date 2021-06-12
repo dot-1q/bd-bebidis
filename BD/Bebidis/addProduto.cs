@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace bebidis_projeto
+namespace Bebidis
 {
     public partial class addProduto : Form
     {
