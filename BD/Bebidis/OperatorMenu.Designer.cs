@@ -30,7 +30,7 @@ namespace Bebidis
         private void InitializeComponent()
         {
             this.updateInventory = new System.Windows.Forms.Button();
-            this.updateStock = new System.Windows.Forms.ListBox();
+            this.seeStock = new System.Windows.Forms.ListBox();
             this.productName = new System.Windows.Forms.TextBox();
             this.productQuantity = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -44,14 +44,14 @@ namespace Bebidis
             this.updateInventory.Text = "Atualizar Inventário";
             this.updateInventory.UseVisualStyleBackColor = true;
             // 
-            // updateStock
+            // seeStock
             // 
-            this.updateStock.FormattingEnabled = true;
-            this.updateStock.ItemHeight = 15;
-            this.updateStock.Location = new System.Drawing.Point(12, 82);
-            this.updateStock.Name = "updateStock";
-            this.updateStock.Size = new System.Drawing.Size(754, 349);
-            this.updateStock.TabIndex = 14;
+            this.seeStock.FormattingEnabled = true;
+            this.seeStock.ItemHeight = 15;
+            this.seeStock.Location = new System.Drawing.Point(12, 82);
+            this.seeStock.Name = "seeStock";
+            this.seeStock.Size = new System.Drawing.Size(754, 349);
+            this.seeStock.TabIndex = 14;
             // 
             // productName
             // 
@@ -76,7 +76,7 @@ namespace Bebidis
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.productQuantity);
             this.Controls.Add(this.productName);
-            this.Controls.Add(this.updateStock);
+            this.Controls.Add(this.seeStock);
             this.Controls.Add(this.updateInventory);
             this.Name = "OperatorMenu";
             this.Text = "Menu Operador";
@@ -88,7 +88,7 @@ namespace Bebidis
         #endregion
 
         private System.Windows.Forms.Button updateInventory;
-        private System.Windows.Forms.ListBox updateStock;
+        private System.Windows.Forms.ListBox seeStock;
         private System.Windows.Forms.TextBox productName;
         private System.Windows.Forms.TextBox productQuantity;
     }

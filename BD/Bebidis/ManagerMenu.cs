@@ -31,8 +31,7 @@ namespace Bebidis
 
         private void routesHistory_Click(object sender, EventArgs e)
         {
-            Roles rolesMenu = new Roles();
-            rolesMenu.Show();
+
         }
 
         private void salesHistory_Click(object sender, EventArgs e)
@@ -41,10 +40,16 @@ namespace Bebidis
             vehiclesMenu.Show();
         }
 
-        private void salesSelection_SelectedIndexChanged(object sender, EventArgs e)
+        private void setRoles_Click(object sender, EventArgs e)
         {
-
+            Roles rolesMenu = new Roles();
+            rolesMenu.Show();
         }
 
+        private void manageVehicles_Click(object sender, EventArgs e)
+        {
+            Vehicles vehiclesMenu = new Vehicles();
+            vehiclesMenu.Show();
+        }
     }
 }

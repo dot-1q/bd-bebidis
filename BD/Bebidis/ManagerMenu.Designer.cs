@@ -68,6 +68,7 @@ namespace Bebidis
             this.setRoles.TabIndex = 2;
             this.setRoles.Text = "Cargos";
             this.setRoles.UseVisualStyleBackColor = true;
+            this.setRoles.Click += new System.EventHandler(this.setRoles_Click);
             // 
             // salesHistory
             // 
@@ -112,7 +113,6 @@ namespace Bebidis
             this.salesSelection.Name = "salesSelection";
             this.salesSelection.Size = new System.Drawing.Size(145, 112);
             this.salesSelection.TabIndex = 8;
-            this.salesSelection.SelectedIndexChanged += new System.EventHandler(this.salesSelection_SelectedIndexChanged);
             // 
             // routesSelection
             // 
@@ -137,6 +137,7 @@ namespace Bebidis
             this.manageVehicles.TabIndex = 10;
             this.manageVehicles.Text = "Gerir Veículos";
             this.manageVehicles.UseVisualStyleBackColor = true;
+            this.manageVehicles.Click += new System.EventHandler(this.manageVehicles_Click);
             // 
             // ManagerMenu
             // 

@@ -512,7 +512,7 @@ INSERT INTO BW.Rotas (id) VALUES (13);
 INSERT INTO BW.Rotas (id) VALUES (14);
 INSERT INTO BW.Rotas (id) VALUES (15);
 
--- FEz Rotas
+-- Fez Rotas
 INSERT INTO BW.FezRota (id, carro_usado,data_realizacao) VALUES (1, 'T6-1I-Y2', '2021-06-09');
 INSERT INTO BW.FezRota (id, carro_usado,data_realizacao) VALUES (2, 'E8-9R-K9', '2020-12-15');
 INSERT INTO BW.FezRota (id, carro_usado,data_realizacao) VALUES (3, 'H6-7X-Z1', '2021-05-08');
@@ -551,6 +551,7 @@ INSERT INTO BW.ZonasRotas (id, zona) VALUES (3, 'Guimarães');
 INSERT INTO BW.ZonasRotas (id, zona) VALUES (4, 'Famalicão');
 INSERT INTO BW.ZonasRotas (id, zona) VALUES (5, 'Arcos de Valdevez');
 INSERT INTO BW.ZonasRotas (id, zona) VALUES (6, 'Braga');
+INSERT INTO BW.ZonasRotas (id, zona) VALUES (6, 'Porto');
 INSERT INTO BW.ZonasRotas (id, zona) VALUES (7, 'Viana do Castelo');
 INSERT INTO BW.ZonasRotas (id, zona) VALUES (8, 'Famalicão');
 INSERT INTO BW.ZonasRotas (id, zona) VALUES (9, 'Vila Real');

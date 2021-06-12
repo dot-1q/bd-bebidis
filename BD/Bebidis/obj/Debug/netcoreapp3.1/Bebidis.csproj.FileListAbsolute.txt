@@ -16,3 +16,8 @@ C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.
 C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.dll
 C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.pdb
 C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.genruntimeconfig.cache
+C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\bebidis_projeto.addProduto.resources
+C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.InventoryProdutsMenu.resources
+C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.PlaceDelivery.resources
+C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.Roles.resources
+C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.Vehicles.resources

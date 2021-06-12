@@ -34,6 +34,8 @@ namespace Bebidis
             this.deleteVehicle = new System.Windows.Forms.Button();
             this.setResponsable = new System.Windows.Forms.Button();
             this.seeVehiclesUnused = new System.Windows.Forms.ListBox();
+            this.seeTrucksInUse = new System.Windows.Forms.ListBox();
+            this.seeTrucksUnused = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // seeVehiclesInUse
@@ -42,7 +44,7 @@ namespace Bebidis
             this.seeVehiclesInUse.ItemHeight = 15;
             this.seeVehiclesInUse.Location = new System.Drawing.Point(12, 89);
             this.seeVehiclesInUse.Name = "seeVehiclesInUse";
-            this.seeVehiclesInUse.Size = new System.Drawing.Size(397, 349);
+            this.seeVehiclesInUse.Size = new System.Drawing.Size(397, 169);
             this.seeVehiclesInUse.TabIndex = 0;
             // 
             // insertVehicle
@@ -78,14 +80,34 @@ namespace Bebidis
             this.seeVehiclesUnused.ItemHeight = 15;
             this.seeVehiclesUnused.Location = new System.Drawing.Point(415, 89);
             this.seeVehiclesUnused.Name = "seeVehiclesUnused";
-            this.seeVehiclesUnused.Size = new System.Drawing.Size(373, 349);
+            this.seeVehiclesUnused.Size = new System.Drawing.Size(397, 169);
             this.seeVehiclesUnused.TabIndex = 8;
+            // 
+            // seeTrucksInUse
+            // 
+            this.seeTrucksInUse.FormattingEnabled = true;
+            this.seeTrucksInUse.ItemHeight = 15;
+            this.seeTrucksInUse.Location = new System.Drawing.Point(12, 264);
+            this.seeTrucksInUse.Name = "seeTrucksInUse";
+            this.seeTrucksInUse.Size = new System.Drawing.Size(397, 169);
+            this.seeTrucksInUse.TabIndex = 9;
+            // 
+            // seeTrucksUnused
+            // 
+            this.seeTrucksUnused.FormattingEnabled = true;
+            this.seeTrucksUnused.ItemHeight = 15;
+            this.seeTrucksUnused.Location = new System.Drawing.Point(415, 264);
+            this.seeTrucksUnused.Name = "seeTrucksUnused";
+            this.seeTrucksUnused.Size = new System.Drawing.Size(397, 169);
+            this.seeTrucksUnused.TabIndex = 10;
             // 
             // Vehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(842, 450);
+            this.Controls.Add(this.seeTrucksUnused);
+            this.Controls.Add(this.seeTrucksInUse);
             this.Controls.Add(this.seeVehiclesUnused);
             this.Controls.Add(this.setResponsable);
             this.Controls.Add(this.deleteVehicle);
@@ -104,5 +126,7 @@ namespace Bebidis
         private System.Windows.Forms.Button deleteVehicle;
         private System.Windows.Forms.Button setResponsable;
         private System.Windows.Forms.ListBox seeVehiclesUnused;
+        private System.Windows.Forms.ListBox seeTrucksInUse;
+        private System.Windows.Forms.ListBox seeTrucksUnused;
     }
 }
