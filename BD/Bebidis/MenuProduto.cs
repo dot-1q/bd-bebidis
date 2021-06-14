@@ -10,20 +10,14 @@ using System.Windows.Forms;
 
 namespace Bebidis
 {
-    public partial class addProduto : Form
+    public partial class MenuProduto : Form
     {
-        public addProduto()
+        public MenuProduto()
         {
             InitializeComponent();
         }
 
         private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-     
-        private void AddProduto_Load(object sender, EventArgs e)
         {
 
         }
@@ -64,8 +58,9 @@ namespace Bebidis
             }
         }
 
+        private void addUpdate_Click(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

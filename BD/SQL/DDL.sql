@@ -99,7 +99,7 @@ CREATE TABLE BW.Inventario(
     operador_resp INT,
 
     PRIMARY KEY(codigo,n_unidades),
-    FOREIGN KEY(codigo) REFERENCES BW.Produto(codigo) ON UPDATE CASCADE,
+    FOREIGN KEY(codigo) REFERENCES BW.Produto(codigo) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY(operador_resp) REFERENCES BW.Operador(num_funcionario),
 );
 CREATE TABLE BW.Venda(
@@ -134,7 +134,7 @@ CREATE TABLE BW.VendaSobre(
 
     PRIMARY KEY(num_venda,produtos),
     FOREIGN KEY(num_venda) REFERENCES BW.Venda(numero) ON UPDATE CASCADE,
-    FOREIGN KEY(produtos) REFERENCES BW.Produto(codigo) ON UPDATE CASCADE 
+    FOREIGN KEY(produtos) REFERENCES BW.Produto(codigo) ON UPDATE CASCADE ON DELETE CASCADE
 );
 CREATE TABLE BW.Automoveis(
     matricula       VARCHAR(10) NOT NULL,

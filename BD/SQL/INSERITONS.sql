@@ -354,21 +354,36 @@ insert into BW.Contem (num_encomenda, num_venda) values (9, 29);
 insert into BW.Contem (num_encomenda, num_venda) values (10, 30);
 
 -- Inventario 
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (1918195, 241, '2020-09-21', 645110989);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (2953809, 788, '2021-01-01', 875829119);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4742993, 941, '2020-12-28', 875829119);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (2953809, 720, '2020-06-10', 875829119);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (6309780, 342, '2021-05-15', 645110989);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (1918195, 941, '2021-02-28', 393918141);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4461693, 570, '2020-07-13', 393918141);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4461693, 911, '2021-03-04', 703082769);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (6309780, 378, '2020-09-07', 242524100);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4461693, 852, '2020-12-19', 306203981);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (6814563, 567, '2020-08-26', 645110989);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (6814563, 165, '2020-08-10', 703082769);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (0435264, 313, '2020-06-29', 645110989);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (2566352, 655, '2021-06-08', 393918141);
-INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (2566352, 259, '2020-11-11', 242524100);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4050455, 241, '2020-09-21', 645110989);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (0284073, 788, '2021-01-01', 875829119);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (6635329, 941, '2020-12-28', 875829119);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4742993, 720, '2020-06-10', 875829119);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (0092338, 342, '2021-05-15', 645110989);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (6309780, 941, '2021-02-28', 393918141);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (0435264, 570, '2020-07-13', 393918141);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (6814563, 911, '2021-03-04', 703082769);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (1523993, 378, '2020-09-07', 242524100);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (1918195, 852, '2020-12-19', 306203981);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (2953809, 567, '2020-08-26', 645110989);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4461693, 165, '2020-08-10', 703082769);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (2566352, 313, '2020-06-29', 645110989);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (1104978, 655, '2021-06-08', 393918141);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (1162622, 259, '2020-11-11', 242524100);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (2021983, 241, '2020-09-21', 645110989);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (6766504, 788, '2021-01-01', 875829119);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4321553, 941, '2020-12-28', 875829119);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (1532163, 720, '2020-06-10', 875829119);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (9256809, 342, '2021-05-15', 645110989);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4678637, 941, '2021-02-28', 393918141);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (8687673, 570, '2020-07-13', 393918141);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (3419594, 911, '2021-03-04', 703082769);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (0556618, 378, '2020-09-07', 242524100);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (9448384, 852, '2020-12-19', 306203981);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (8357204, 567, '2020-08-26', 645110989);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (4920978, 165, '2020-08-10', 703082769);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (2090001, 313, '2020-06-29', 645110989);
+INSERT INTO BW.Inventario (codigo, n_unidades, data_adicao, operador_resp) VALUES (7364366, 655, '2021-06-08', 393918141);
+
 
 -- Comprador
 INSERT INTO BW.Comprador (num_comprador, n_telefone, nome, localizacao) VALUES (2770157, 945853711, 'Nanine Treneer', 'Porto');

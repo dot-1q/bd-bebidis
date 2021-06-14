@@ -29,21 +29,13 @@ namespace Bebidis
         /// </summary>
         private void InitializeComponent()
         {
-            this.iventoryProdutsInfo = new System.Windows.Forms.ListBox();
             this.updatePrice = new System.Windows.Forms.Button();
             this.insertProduct = new System.Windows.Forms.Button();
             this.updateName = new System.Windows.Forms.Button();
             this.deleteProduct = new System.Windows.Forms.Button();
+            this.viewProdutos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.viewProdutos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // iventoryProdutsInfo
-            // 
-            this.iventoryProdutsInfo.FormattingEnabled = true;
-            this.iventoryProdutsInfo.ItemHeight = 15;
-            this.iventoryProdutsInfo.Location = new System.Drawing.Point(12, 59);
-            this.iventoryProdutsInfo.Name = "iventoryProdutsInfo";
-            this.iventoryProdutsInfo.Size = new System.Drawing.Size(776, 379);
-            this.iventoryProdutsInfo.TabIndex = 0;
             // 
             // updatePrice
             // 
@@ -82,28 +74,38 @@ namespace Bebidis
             this.deleteProduct.Text = "Remover Produto";
             this.deleteProduct.UseVisualStyleBackColor = true;
             // 
+            // viewProdutos
+            // 
+            this.viewProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewProdutos.Location = new System.Drawing.Point(12, 71);
+            this.viewProdutos.Name = "viewProdutos";
+            this.viewProdutos.RowTemplate.Height = 25;
+            this.viewProdutos.Size = new System.Drawing.Size(776, 367);
+            this.viewProdutos.TabIndex = 5;
+            // 
             // InventoryProdutsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.viewProdutos);
             this.Controls.Add(this.deleteProduct);
             this.Controls.Add(this.updateName);
             this.Controls.Add(this.insertProduct);
             this.Controls.Add(this.updatePrice);
-            this.Controls.Add(this.iventoryProdutsInfo);
             this.Name = "InventoryProdutsMenu";
             this.Text = "Produtos e Iventário";
+            this.Load += new System.EventHandler(this.InventoryProdutsMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.viewProdutos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox iventoryProdutsInfo;
         private System.Windows.Forms.Button updatePrice;
         private System.Windows.Forms.Button insertProduct;
         private System.Windows.Forms.Button updateName;
         private System.Windows.Forms.Button deleteProduct;
+        private System.Windows.Forms.DataGridView viewProdutos;
     }
 }

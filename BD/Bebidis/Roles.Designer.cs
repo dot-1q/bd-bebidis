@@ -29,22 +29,16 @@ namespace Bebidis
         /// </summary>
         private void InitializeComponent()
         {
-            this.seePromotors = new System.Windows.Forms.ListBox();
             this.insertWorker = new System.Windows.Forms.Button();
             this.updateRole = new System.Windows.Forms.Button();
             this.fireWorker = new System.Windows.Forms.Button();
-            this.seeOperators = new System.Windows.Forms.ListBox();
-            this.seeTruckers = new System.Windows.Forms.ListBox();
+            this.viewPromotors = new System.Windows.Forms.DataGridView();
+            this.viewOperators = new System.Windows.Forms.DataGridView();
+            this.viewTruckers = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.viewPromotors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewOperators)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewTruckers)).BeginInit();
             this.SuspendLayout();
-            // 
-            // seePromotors
-            // 
-            this.seePromotors.FormattingEnabled = true;
-            this.seePromotors.ItemHeight = 15;
-            this.seePromotors.Location = new System.Drawing.Point(12, 81);
-            this.seePromotors.Name = "seePromotors";
-            this.seePromotors.Size = new System.Drawing.Size(776, 169);
-            this.seePromotors.TabIndex = 0;
             // 
             // insertWorker
             // 
@@ -73,48 +67,61 @@ namespace Bebidis
             this.fireWorker.Text = "Despedir Trabalhador";
             this.fireWorker.UseVisualStyleBackColor = true;
             // 
-            // seeOperators
+            // viewPromotors
             // 
-            this.seeOperators.FormattingEnabled = true;
-            this.seeOperators.ItemHeight = 15;
-            this.seeOperators.Location = new System.Drawing.Point(12, 256);
-            this.seeOperators.Name = "seeOperators";
-            this.seeOperators.Size = new System.Drawing.Size(776, 169);
-            this.seeOperators.TabIndex = 7;
+            this.viewPromotors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewPromotors.Location = new System.Drawing.Point(12, 89);
+            this.viewPromotors.Name = "viewPromotors";
+            this.viewPromotors.RowTemplate.Height = 25;
+            this.viewPromotors.Size = new System.Drawing.Size(776, 172);
+            this.viewPromotors.TabIndex = 7;
             // 
-            // seeTruckers
+            // viewOperators
             // 
-            this.seeTruckers.FormattingEnabled = true;
-            this.seeTruckers.ItemHeight = 15;
-            this.seeTruckers.Location = new System.Drawing.Point(12, 431);
-            this.seeTruckers.Name = "seeTruckers";
-            this.seeTruckers.Size = new System.Drawing.Size(776, 169);
-            this.seeTruckers.TabIndex = 8;
+            this.viewOperators.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewOperators.Location = new System.Drawing.Point(12, 266);
+            this.viewOperators.Name = "viewOperators";
+            this.viewOperators.RowTemplate.Height = 25;
+            this.viewOperators.Size = new System.Drawing.Size(776, 172);
+            this.viewOperators.TabIndex = 8;
+            // 
+            // viewTruckers
+            // 
+            this.viewTruckers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewTruckers.Location = new System.Drawing.Point(12, 444);
+            this.viewTruckers.Name = "viewTruckers";
+            this.viewTruckers.RowTemplate.Height = 25;
+            this.viewTruckers.Size = new System.Drawing.Size(776, 172);
+            this.viewTruckers.TabIndex = 9;
             // 
             // Roles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 612);
-            this.Controls.Add(this.seeTruckers);
-            this.Controls.Add(this.seeOperators);
+            this.ClientSize = new System.Drawing.Size(800, 622);
+            this.Controls.Add(this.viewTruckers);
+            this.Controls.Add(this.viewOperators);
+            this.Controls.Add(this.viewPromotors);
             this.Controls.Add(this.fireWorker);
             this.Controls.Add(this.updateRole);
             this.Controls.Add(this.insertWorker);
-            this.Controls.Add(this.seePromotors);
             this.Name = "Roles";
             this.Text = "Roles";
+            this.Load += new System.EventHandler(this.Roles_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.viewPromotors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewOperators)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewTruckers)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox seePromotors;
         private System.Windows.Forms.Button insertWorker;
         private System.Windows.Forms.Button updateRole;
         private System.Windows.Forms.Button fireWorker;
-        private System.Windows.Forms.ListBox seeOperators;
-        private System.Windows.Forms.ListBox seeTruckers;
+        private System.Windows.Forms.DataGridView viewPromotors;
+        private System.Windows.Forms.DataGridView viewOperators;
+        private System.Windows.Forms.DataGridView viewTruckers;
     }
 }

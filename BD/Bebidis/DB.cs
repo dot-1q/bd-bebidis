@@ -9,17 +9,16 @@ namespace Bebidis
     class DB
     {
         protected static DB db = null;
-        protected String dbServer = "tcp:mednat.ieeta.pt\\SQLSERVER,8101";
-        protected String dbName = "p1g8";
-        protected String userName = "p1g8";
-        protected String userPass = "Lalala#001";
-        protected String connectionString;
+        protected static String dbServer ="tcp:mednat.ieeta.pt\\SQLSERVER,8101";
+        protected static String dbName = "p1g8";
+        protected static String userName = "p1g8";
+        protected static String userPass = "Lalala#001";
+        protected static String connectionString;
 
         protected DB()
         {
             connectionString = "data source=" + dbServer + " ;" + "Initial Catalog = " + dbName +
-            "; uid = " + userName + ";" + "password = " + userPass + ";";
-
+                                    "; uid = " + userName + ";" + "password = " + userPass + ";";
         }
 
         public static DB getDB()

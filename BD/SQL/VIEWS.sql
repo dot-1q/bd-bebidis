@@ -54,3 +54,8 @@ SELECT        BW.Transportador.num_funcionario AS Transportador, BW.Funcionario.
                          BW.Funcionario.salario AS Salário
 FROM            BW.Transportador INNER JOIN
                          BW.Funcionario ON BW.Transportador.num_funcionario = BW.Funcionario.num_funcionario
+						 
+CREATE VIEW BW.viewProdutos AS
+SELECT        BW.Produto.codigo AS Código, BW.Produto.nome AS Produto, BW.Produto.preco AS [Preço/Unidade], BW.Produto.peso AS [Peso (KG)], BW.Inventario.n_unidades AS Unidades
+FROM            BW.Inventario INNER JOIN
+                         BW.Produto ON BW.Inventario.codigo = BW.Produto.codigo
