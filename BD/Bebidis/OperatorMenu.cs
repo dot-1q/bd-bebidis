@@ -11,12 +11,47 @@ namespace Bebidis
 {
     public partial class OperatorMenu : Form
     {
-        public OperatorMenu()
+        private string utilizador;
+        public OperatorMenu(string utilizador)
         {
             InitializeComponent();
+            this.utilizador = utilizador;
         }
 
         private void OperatorMenu_Load(object sender, EventArgs e)
+        {
+            updateDateGrid();
+        }
+        private void viewStock_SelectionChanged(object sender, EventArgs e)
+        {
+            if (viewStock.SelectedRows.Count > 0)
+            {
+
+                string codigo = viewStock.SelectedRows[0].Cells[0].Value.ToString();
+                string quantidade = viewStock.SelectedRows[0].Cells[3].Value.ToString();
+
+                productName.Text = codigo;
+                quant.Value = Int32.Parse(quantidade);
+            }
+        }
+
+        private void updateInventory_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+            {
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
+                string queryString = "EXEC BW.p_insertStock @codigo = "+productName.Text+", @quantidade ="+quant.Value.ToString()+" , @responsavel = "+utilizador+", @data = '"+date+"';";
+
+                using (var cmd = new SqlCommand(queryString, cn))
+                {
+                    cn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            updateDateGrid();
+        }
+
+        private void updateDateGrid()
         {
             using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
             {
@@ -43,16 +78,6 @@ namespace Bebidis
                 viewStock.Columns[5].Width = 100;
                 viewStock.Columns[6].Width = 180;
             }
-        }
-
-        private void viewStock_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void updateInventory_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -78,7 +78,7 @@ CREATE TABLE BW.Encomenda(
 );
 CREATE TABLE BW.Produto(
     codigo      INT NOT NULL IDENTITY(1,1),
-    preco       MONEY CHECK(preco>=0),
+    preco       DECIMAL(5,2) CHECK(preco>=0.00),
     nome        VARCHAR(30),
 	peso		DECIMAL(4,1) NOT NULL,
 
@@ -105,7 +105,7 @@ CREATE TABLE BW.Inventario(
 CREATE TABLE BW.Venda(
     numero  INT NOT NULL IDENTITY(1,1),
     data_realizacao    DATE,
-    preco   MONEY CHECK(preco>=0),
+    preco   DECIMAL(10,2) CHECK(preco>=0.00),
     feita_por INT,
 
     PRIMARY KEY(numero),
@@ -118,6 +118,7 @@ CREATE TABLE BW.Comprador(
     localizacao     VARCHAR(40),
 
     PRIMARY KEY(num_comprador),
+	UNIQUE(n_telefone)
 );
 CREATE TABLE BW.VendaAo(
     num_venda       INT NOT NULL,

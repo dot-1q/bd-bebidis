@@ -27,6 +27,5 @@ C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\bin\Debug\netcoreapp3.
 C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.csproj.CopyComplete
-C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.MenuProduto.resources
 C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.RoleMenu.resources
 C:\Users\Tiago\Desktop\2º Semestre\bd-bebidis\BD\Bebidis\obj\Debug\netcoreapp3.1\Bebidis.VehicleMenu.resources

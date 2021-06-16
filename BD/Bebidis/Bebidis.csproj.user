@@ -7,9 +7,6 @@
     <Compile Update="RoleMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MenuProduto.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="InventoryProdutsMenu.cs">
       <SubType>Form</SubType>
     </Compile>

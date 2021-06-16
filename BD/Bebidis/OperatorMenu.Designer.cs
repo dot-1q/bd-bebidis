@@ -34,9 +34,9 @@ namespace Bebidis
             this.viewStock = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.quant = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.viewStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quant)).BeginInit();
             this.SuspendLayout();
             // 
             // updateInventory
@@ -62,9 +62,10 @@ namespace Bebidis
             this.viewStock.Location = new System.Drawing.Point(12, 77);
             this.viewStock.Name = "viewStock";
             this.viewStock.RowTemplate.Height = 25;
+            this.viewStock.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.viewStock.Size = new System.Drawing.Size(776, 361);
             this.viewStock.TabIndex = 17;
-            this.viewStock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewStock_CellContentClick);
+            this.viewStock.SelectionChanged += new System.EventHandler(this.viewStock_SelectionChanged);
             // 
             // label1
             // 
@@ -84,19 +85,24 @@ namespace Bebidis
             this.label2.TabIndex = 19;
             this.label2.Text = "Quantidade:";
             // 
-            // numericUpDown1
+            // quant
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(258, 41);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 23);
-            this.numericUpDown1.TabIndex = 20;
+            this.quant.Location = new System.Drawing.Point(258, 41);
+            this.quant.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.quant.Name = "quant";
+            this.quant.Size = new System.Drawing.Size(120, 23);
+            this.quant.TabIndex = 20;
             // 
             // OperatorMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.quant);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.viewStock);
@@ -106,7 +112,7 @@ namespace Bebidis
             this.Text = "Menu Operador";
             this.Load += new System.EventHandler(this.OperatorMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quant)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +125,6 @@ namespace Bebidis
         private System.Windows.Forms.DataGridView viewStock;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown quant;
     }
 }
