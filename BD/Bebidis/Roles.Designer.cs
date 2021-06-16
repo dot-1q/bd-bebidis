@@ -35,6 +35,8 @@ namespace Bebidis
             this.viewPromotors = new System.Windows.Forms.DataGridView();
             this.viewOperators = new System.Windows.Forms.DataGridView();
             this.viewTruckers = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.viewPromotors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewOperators)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewTruckers)).BeginInit();
@@ -48,6 +50,7 @@ namespace Bebidis
             this.insertWorker.TabIndex = 4;
             this.insertWorker.Text = "Adicionar Trabalhador";
             this.insertWorker.UseVisualStyleBackColor = true;
+            this.insertWorker.Click += new System.EventHandler(this.insertWorker_Click);
             // 
             // updateRole
             // 
@@ -55,12 +58,13 @@ namespace Bebidis
             this.updateRole.Name = "updateRole";
             this.updateRole.Size = new System.Drawing.Size(120, 45);
             this.updateRole.TabIndex = 5;
-            this.updateRole.Text = "Atualizar Cargo";
+            this.updateRole.Text = "Atualizar Trabalhador";
             this.updateRole.UseVisualStyleBackColor = true;
+            this.updateRole.Click += new System.EventHandler(this.updateRole_Click);
             // 
             // fireWorker
             // 
-            this.fireWorker.Location = new System.Drawing.Point(668, 12);
+            this.fireWorker.Location = new System.Drawing.Point(533, 12);
             this.fireWorker.Name = "fireWorker";
             this.fireWorker.Size = new System.Drawing.Size(120, 45);
             this.fireWorker.TabIndex = 6;
@@ -94,11 +98,29 @@ namespace Bebidis
             this.viewTruckers.Size = new System.Drawing.Size(776, 172);
             this.viewTruckers.TabIndex = 9;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(659, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(128, 23);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(659, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Número: ";
+            // 
             // Roles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 622);
+            this.ClientSize = new System.Drawing.Size(801, 622);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.viewTruckers);
             this.Controls.Add(this.viewOperators);
             this.Controls.Add(this.viewPromotors);
@@ -112,6 +134,7 @@ namespace Bebidis
             ((System.ComponentModel.ISupportInitialize)(this.viewOperators)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewTruckers)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -123,5 +146,7 @@ namespace Bebidis
         private System.Windows.Forms.DataGridView viewPromotors;
         private System.Windows.Forms.DataGridView viewOperators;
         private System.Windows.Forms.DataGridView viewTruckers;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

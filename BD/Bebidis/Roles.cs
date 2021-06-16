@@ -93,5 +93,16 @@ namespace Bebidis
             }
         }
 
+        private void insertWorker_Click(object sender, EventArgs e)
+        {
+            //insert funcionario
+            new RoleMenu().Show();
+        }
+
+        private void updateRole_Click(object sender, EventArgs e)
+        {
+            //update funcionario
+            new RoleMenu().Show();
+        }
     }
 }

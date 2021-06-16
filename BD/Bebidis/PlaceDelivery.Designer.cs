@@ -29,92 +29,141 @@ namespace Bebidis
         /// </summary>
         private void InitializeComponent()
         {
-            this.salesNotDelivered = new System.Windows.Forms.ListBox();
             this.confirmDeliveries = new System.Windows.Forms.Button();
-            this.selectDriver = new System.Windows.Forms.Button();
-            this.availableTruckers = new System.Windows.Forms.ListBox();
-            this.availableTrucks = new System.Windows.Forms.ListBox();
-            this.selectTruck = new System.Windows.Forms.Button();
+            this.viewSalesNotEnc = new System.Windows.Forms.DataGridView();
+            this.viewTrucks = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.viewTruckers = new System.Windows.Forms.DataGridView();
+            this.salesNum = new System.Windows.Forms.TextBox();
+            this.Transportador = new System.Windows.Forms.Label();
+            this.truckNum = new System.Windows.Forms.TextBox();
+            this.truckerNum = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.viewSalesNotEnc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewTrucks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewTruckers)).BeginInit();
             this.SuspendLayout();
-            // 
-            // salesNotDelivered
-            // 
-            this.salesNotDelivered.FormattingEnabled = true;
-            this.salesNotDelivered.ItemHeight = 15;
-            this.salesNotDelivered.Location = new System.Drawing.Point(12, 70);
-            this.salesNotDelivered.Name = "salesNotDelivered";
-            this.salesNotDelivered.Size = new System.Drawing.Size(552, 364);
-            this.salesNotDelivered.TabIndex = 0;
             // 
             // confirmDeliveries
             // 
-            this.confirmDeliveries.Location = new System.Drawing.Point(668, 12);
+            this.confirmDeliveries.Location = new System.Drawing.Point(252, 9);
             this.confirmDeliveries.Name = "confirmDeliveries";
-            this.confirmDeliveries.Size = new System.Drawing.Size(120, 45);
+            this.confirmDeliveries.Size = new System.Drawing.Size(120, 81);
             this.confirmDeliveries.TabIndex = 2;
-            this.confirmDeliveries.Text = "Confirmar Encomenda(s)";
+            this.confirmDeliveries.Text = "Confirmar Encomenda";
             this.confirmDeliveries.UseVisualStyleBackColor = true;
             // 
-            // selectDriver
+            // viewSalesNotEnc
             // 
-            this.selectDriver.Location = new System.Drawing.Point(12, 12);
-            this.selectDriver.Name = "selectDriver";
-            this.selectDriver.Size = new System.Drawing.Size(120, 45);
-            this.selectDriver.TabIndex = 3;
-            this.selectDriver.Text = "Selecionar Transportador";
-            this.selectDriver.UseVisualStyleBackColor = true;
+            this.viewSalesNotEnc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewSalesNotEnc.Location = new System.Drawing.Point(12, 96);
+            this.viewSalesNotEnc.Name = "viewSalesNotEnc";
+            this.viewSalesNotEnc.RowTemplate.Height = 25;
+            this.viewSalesNotEnc.Size = new System.Drawing.Size(783, 363);
+            this.viewSalesNotEnc.TabIndex = 7;
             // 
-            // availableTruckers
+            // viewTrucks
             // 
-            this.availableTruckers.FormattingEnabled = true;
-            this.availableTruckers.ItemHeight = 15;
-            this.availableTruckers.Location = new System.Drawing.Point(570, 70);
-            this.availableTruckers.Name = "availableTruckers";
-            this.availableTruckers.Size = new System.Drawing.Size(218, 169);
-            this.availableTruckers.TabIndex = 4;
+            this.viewTrucks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewTrucks.Location = new System.Drawing.Point(801, 96);
+            this.viewTrucks.Name = "viewTrucks";
+            this.viewTrucks.RowTemplate.Height = 25;
+            this.viewTrucks.Size = new System.Drawing.Size(260, 179);
+            this.viewTrucks.TabIndex = 8;
             // 
-            // availableTrucks
+            // label1
             // 
-            this.availableTrucks.FormattingEnabled = true;
-            this.availableTrucks.ItemHeight = 15;
-            this.availableTrucks.Location = new System.Drawing.Point(570, 249);
-            this.availableTrucks.Name = "availableTrucks";
-            this.availableTrucks.Size = new System.Drawing.Size(218, 184);
-            this.availableTrucks.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(41, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 15);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Venda(s) : ";
             // 
-            // selectTruck
+            // label2
             // 
-            this.selectTruck.Location = new System.Drawing.Point(138, 12);
-            this.selectTruck.Name = "selectTruck";
-            this.selectTruck.Size = new System.Drawing.Size(120, 45);
-            this.selectTruck.TabIndex = 6;
-            this.selectTruck.Text = "Selecionar Pesado";
-            this.selectTruck.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(48, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 15);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Pesado : ";
+            // 
+            // viewTruckers
+            // 
+            this.viewTruckers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewTruckers.Location = new System.Drawing.Point(801, 281);
+            this.viewTruckers.Name = "viewTruckers";
+            this.viewTruckers.RowTemplate.Height = 25;
+            this.viewTruckers.Size = new System.Drawing.Size(260, 179);
+            this.viewTruckers.TabIndex = 11;
+            // 
+            // salesNum
+            // 
+            this.salesNum.Location = new System.Drawing.Point(105, 10);
+            this.salesNum.Name = "salesNum";
+            this.salesNum.Size = new System.Drawing.Size(100, 23);
+            this.salesNum.TabIndex = 12;
+            // 
+            // Transportador
+            // 
+            this.Transportador.AutoSize = true;
+            this.Transportador.Location = new System.Drawing.Point(13, 70);
+            this.Transportador.Name = "Transportador";
+            this.Transportador.Size = new System.Drawing.Size(89, 15);
+            this.Transportador.TabIndex = 13;
+            this.Transportador.Text = "Transportador : ";
+            // 
+            // truckNum
+            // 
+            this.truckNum.Location = new System.Drawing.Point(105, 39);
+            this.truckNum.Name = "truckNum";
+            this.truckNum.Size = new System.Drawing.Size(100, 23);
+            this.truckNum.TabIndex = 14;
+            // 
+            // truckerNum
+            // 
+            this.truckerNum.Location = new System.Drawing.Point(105, 67);
+            this.truckerNum.Name = "truckerNum";
+            this.truckerNum.Size = new System.Drawing.Size(100, 23);
+            this.truckerNum.TabIndex = 15;
             // 
             // PlaceDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.selectTruck);
-            this.Controls.Add(this.availableTrucks);
-            this.Controls.Add(this.availableTruckers);
-            this.Controls.Add(this.selectDriver);
+            this.ClientSize = new System.Drawing.Size(1074, 473);
+            this.Controls.Add(this.truckerNum);
+            this.Controls.Add(this.truckNum);
+            this.Controls.Add(this.Transportador);
+            this.Controls.Add(this.salesNum);
+            this.Controls.Add(this.viewTruckers);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.viewTrucks);
+            this.Controls.Add(this.viewSalesNotEnc);
             this.Controls.Add(this.confirmDeliveries);
-            this.Controls.Add(this.salesNotDelivered);
             this.Name = "PlaceDelivery";
             this.Text = "PlaceDelivery";
+            this.Load += new System.EventHandler(this.PlaceDelivery_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.viewSalesNotEnc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewTrucks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewTruckers)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox salesNotDelivered;
         private System.Windows.Forms.Button confirmDeliveries;
-        private System.Windows.Forms.Button selectDriver;
-        private System.Windows.Forms.ListBox availableTruckers;
-        private System.Windows.Forms.ListBox availableTrucks;
-        private System.Windows.Forms.Button selectTruck;
+        private System.Windows.Forms.DataGridView viewSalesNotEnc;
+        private System.Windows.Forms.DataGridView viewTrucks;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView viewTruckers;
+        private System.Windows.Forms.TextBox salesNum;
+        private System.Windows.Forms.Label Transportador;
+        private System.Windows.Forms.TextBox truckNum;
+        private System.Windows.Forms.TextBox truckerNum;
     }
 }

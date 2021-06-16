@@ -55,6 +55,7 @@ namespace Bebidis
                 dataGridView1.Columns[2].Width = 80;
                 dataGridView1.Columns[3].Width = 100;
                 dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[5].Width = 100;
 
             }
         }

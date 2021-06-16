@@ -74,7 +74,6 @@
             this.codeBox.Location = new System.Drawing.Point(160, 76);
             this.codeBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.codeBox.Name = "codeBox";
-            this.codeBox.ReadOnly = true;
             this.codeBox.Size = new System.Drawing.Size(135, 23);
             this.codeBox.TabIndex = 5;
             this.codeBox.TextChanged += new System.EventHandler(this.CodeBox_TextChanged);

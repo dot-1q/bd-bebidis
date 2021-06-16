@@ -47,6 +47,7 @@ namespace Bebidis
             this.updateInventory.TabIndex = 13;
             this.updateInventory.Text = "Atualizar Inventário";
             this.updateInventory.UseVisualStyleBackColor = true;
+            this.updateInventory.Click += new System.EventHandler(this.updateInventory_Click);
             // 
             // productName
             // 
@@ -63,6 +64,7 @@ namespace Bebidis
             this.viewStock.RowTemplate.Height = 25;
             this.viewStock.Size = new System.Drawing.Size(776, 361);
             this.viewStock.TabIndex = 17;
+            this.viewStock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewStock_CellContentClick);
             // 
             // label1
             // 

@@ -44,5 +44,15 @@ namespace Bebidis
                 viewStock.Columns[6].Width = 180;
             }
         }
+
+        private void viewStock_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void updateInventory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

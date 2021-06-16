@@ -92,3 +92,21 @@ BEGIN
 	
 	RETURN @rotas
 END
+
+
+CREATE FUNCTION BW.getLatestRoute (@vehicle nvarchar(10)) returns nvarchar(max)
+AS
+BEGIN
+	-- Declare the return variable here
+	DECLARE @rota nvarchar(max)
+
+	SELECT TOP 1 @rota = BW.getRotas(id)
+	FROM BW.FezRota
+	WHERE carro_usado=@vehicle
+	ORDER BY data_realizacao DESC
+
+	-- Return the result of the function
+	RETURN @rota
+
+END
+GO

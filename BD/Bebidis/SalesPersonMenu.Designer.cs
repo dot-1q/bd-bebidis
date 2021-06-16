@@ -31,15 +31,18 @@ namespace Bebidis
         {
             this.setZone = new System.Windows.Forms.Button();
             this.makeSell = new System.Windows.Forms.Button();
-            this.checkStock = new System.Windows.Forms.Button();
-            this.checkPrice = new System.Windows.Forms.Button();
-            this.checkPricesAndStock = new System.Windows.Forms.ListBox();
-            this.menuVenda = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.viewProducts = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.productQuantity = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.viewProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // setZone
             // 
-            this.setZone.Location = new System.Drawing.Point(396, 12);
+            this.setZone.Location = new System.Drawing.Point(12, 12);
             this.setZone.Name = "setZone";
             this.setZone.Size = new System.Drawing.Size(100, 45);
             this.setZone.TabIndex = 14;
@@ -48,64 +51,76 @@ namespace Bebidis
             // 
             // makeSell
             // 
-            this.makeSell.Location = new System.Drawing.Point(625, 12);
+            this.makeSell.Location = new System.Drawing.Point(744, 395);
             this.makeSell.Name = "makeSell";
             this.makeSell.Size = new System.Drawing.Size(100, 45);
             this.makeSell.TabIndex = 13;
             this.makeSell.Text = "Confirmar Venda";
             this.makeSell.UseVisualStyleBackColor = true;
             // 
-            // checkStock
+            // label1
             // 
-            this.checkStock.Location = new System.Drawing.Point(118, 12);
-            this.checkStock.Name = "checkStock";
-            this.checkStock.Size = new System.Drawing.Size(100, 45);
-            this.checkStock.TabIndex = 12;
-            this.checkStock.Text = "Stock";
-            this.checkStock.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(542, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 15);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Produtos: ";
             // 
-            // checkPrice
+            // viewProducts
             // 
-            this.checkPrice.Location = new System.Drawing.Point(12, 12);
-            this.checkPrice.Name = "checkPrice";
-            this.checkPrice.Size = new System.Drawing.Size(100, 45);
-            this.checkPrice.TabIndex = 11;
-            this.checkPrice.Text = "Preçário";
-            this.checkPrice.UseVisualStyleBackColor = true;
-            this.checkPrice.Click += new System.EventHandler(this.checkPrice_Click);
+            this.viewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.viewProducts.Location = new System.Drawing.Point(13, 74);
+            this.viewProducts.Name = "viewProducts";
+            this.viewProducts.RowTemplate.Height = 25;
+            this.viewProducts.Size = new System.Drawing.Size(494, 366);
+            this.viewProducts.TabIndex = 17;
             // 
-            // checkPricesAndStock
+            // label2
             // 
-            this.checkPricesAndStock.FormattingEnabled = true;
-            this.checkPricesAndStock.ItemHeight = 15;
-            this.checkPricesAndStock.Location = new System.Drawing.Point(12, 89);
-            this.checkPricesAndStock.Name = "checkPricesAndStock";
-            this.checkPricesAndStock.Size = new System.Drawing.Size(484, 349);
-            this.checkPricesAndStock.TabIndex = 15;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(542, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 15);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Comprador: ";
             // 
-            // menuVenda
+            // textBox1
             // 
-            this.menuVenda.FormattingEnabled = true;
-            this.menuVenda.ItemHeight = 15;
-            this.menuVenda.Location = new System.Drawing.Point(513, 89);
-            this.menuVenda.Name = "menuVenda";
-            this.menuVenda.Size = new System.Drawing.Size(340, 349);
-            this.menuVenda.TabIndex = 16;
+            this.textBox1.Location = new System.Drawing.Point(656, 76);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(188, 23);
+            this.textBox1.TabIndex = 19;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // productQuantity
+            // 
+            this.productQuantity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productQuantity.Location = new System.Drawing.Point(542, 137);
+            this.productQuantity.Name = "productQuantity";
+            this.productQuantity.RowTemplate.Height = 25;
+            this.productQuantity.Size = new System.Drawing.Size(302, 252);
+            this.productQuantity.TabIndex = 20;
             // 
             // SalesPersonMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 452);
-            this.Controls.Add(this.menuVenda);
-            this.Controls.Add(this.checkPricesAndStock);
+            this.Controls.Add(this.productQuantity);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.viewProducts);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.setZone);
             this.Controls.Add(this.makeSell);
-            this.Controls.Add(this.checkStock);
-            this.Controls.Add(this.checkPrice);
             this.Name = "SalesPersonMenu";
             this.Text = "Menu Promotor";
+            this.Load += new System.EventHandler(this.SalesPersonMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.viewProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productQuantity)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,9 +128,11 @@ namespace Bebidis
 
         private System.Windows.Forms.Button setZone;
         private System.Windows.Forms.Button makeSell;
-        private System.Windows.Forms.Button checkStock;
-        private System.Windows.Forms.Button checkPrice;
-        private System.Windows.Forms.ListBox checkPricesAndStock;
-        private System.Windows.Forms.ListBox menuVenda;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView viewProducts;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ColumnHeader Quantidade;
+        private System.Windows.Forms.DataGridView productQuantity;
     }
 }

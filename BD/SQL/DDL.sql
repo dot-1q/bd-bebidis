@@ -27,7 +27,7 @@ CREATE TABLE BW.Armazem(
     PRIMARY KEY (localizacao),
 );
 CREATE TABLE BW.Funcionario(
-    num_funcionario INT NOT NULL, 
+    num_funcionario INT NOT NULL IDENTITY(1,1), 
     nome            VARCHAR(30) NOT NULL,
     n_telemovel     INT CHECK(n_telemovel > 0),
     data_nascimento DATE,
@@ -42,8 +42,8 @@ CREATE TABLE BW.Gerente(
     gere_armazem        VARCHAR(40),
 
     PRIMARY KEY(num_funcionario),
-    FOREIGN KEY (num_funcionario) REFERENCES BW.Funcionario(num_funcionario) ON DELETE CASCADE,
-    FOREIGN KEY (gere_armazem) REFERENCES BW.Armazem(localizacao) ON DELETE SET NULL ON UPDATE CASCADE
+    FOREIGN KEY (num_funcionario) REFERENCES BW.Funcionario(num_funcionario) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (gere_armazem) REFERENCES BW.Armazem(localizacao) ON DELETE NO ACTION
 );
 CREATE TABLE BW.Operador(
     num_funcionario     INT NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE BW.PromotorVendas(
     FOREIGN KEY (num_funcionario) REFERENCES BW.Funcionario(num_funcionario) ON DELETE CASCADE,
 );
 CREATE TABLE BW.Encomenda(
-    numero      INT NOT NULL,
+    numero      INT NOT NULL IDENTITY(1,1),
     data_realizacao    DATE,
     transportador INT,
     veiculo_transp VARCHAR(10),
@@ -77,7 +77,7 @@ CREATE TABLE BW.Encomenda(
     -- FOREIGN KEY DO VEICULO TRANSPORTADOR
 );
 CREATE TABLE BW.Produto(
-    codigo      INT NOT NULL,
+    codigo      INT NOT NULL IDENTITY(1,1),
     preco       MONEY CHECK(preco>=0),
     nome        VARCHAR(30),
 	peso		DECIMAL(4,1) NOT NULL,
@@ -103,7 +103,7 @@ CREATE TABLE BW.Inventario(
     FOREIGN KEY(operador_resp) REFERENCES BW.Operador(num_funcionario),
 );
 CREATE TABLE BW.Venda(
-    numero  INT NOT NULL,
+    numero  INT NOT NULL IDENTITY(1,1),
     data_realizacao    DATE,
     preco   MONEY CHECK(preco>=0),
     feita_por INT,
@@ -112,7 +112,7 @@ CREATE TABLE BW.Venda(
     FOREIGN KEY(feita_por) REFERENCES BW.PromotorVendas(num_funcionario),
 );
 CREATE TABLE BW.Comprador(
-    num_comprador   INT NOT NULL,
+    num_comprador   INT NOT NULL IDENTITY(1,1),
     n_telefone      INT CHECK(n_telefone>0),
     nome            VARCHAR(30),
     localizacao     VARCHAR(40),
@@ -161,7 +161,8 @@ CREATE TABLE BW.Ligeiro(
     FOREIGN KEY(utilizado_por) REFERENCES BW.PromotorVendas(num_funcionario) ON UPDATE CASCADE,
 );
 CREATE TABLE BW.Rotas(
-    id      INT NOT NULL,
+    id      INT NOT NULL IDENTITY(1,1),
+	tipo	varchar(15),
 
     PRIMARY KEY(id)
 );
@@ -181,6 +182,13 @@ CREATE TABLE BW.ZonasRotas(
     PRIMARY KEY(id,zona),
     FOREIGN KEY(id) REFERENCES BW.Rotas(id) ON UPDATE CASCADE,
 );
+CREATE TABLE BW.Login(
+	num_funcionario INT NOT NULL,
+	role	varchar(15),
+	
+	PRIMARY KEY(num_funcionario),
+	FOREIGN KEY(num_funcionario) REFERENCES BW.Funcionario(num_funcionario) ON UPDATE CASCADE ON DELETE CASCADE
+)
 -- ALTER TABLES PARA FOREIGN KEYS
 ALTER TABLE BW.Encomenda    ADD FOREIGN KEY(veiculo_transp)     REFERENCES BW.Pesado(matricula);
 ALTER TABLE BW.Contem 		ADD FOREIGN KEY(num_venda)		REFERENCES BW.Venda(numero);
