@@ -110,6 +110,7 @@ namespace Bebidis
             this.Controls.Add(this.updateInventory);
             this.Name = "OperatorMenu";
             this.Text = "Menu Operador";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OperatorMenu_FormClosed);
             this.Load += new System.EventHandler(this.OperatorMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quant)).EndInit();

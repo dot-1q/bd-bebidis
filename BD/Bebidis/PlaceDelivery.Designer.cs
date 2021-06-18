@@ -52,24 +52,35 @@ namespace Bebidis
             this.confirmDeliveries.TabIndex = 2;
             this.confirmDeliveries.Text = "Confirmar Encomenda";
             this.confirmDeliveries.UseVisualStyleBackColor = true;
+            this.confirmDeliveries.Click += new System.EventHandler(this.confirmDeliveries_Click);
             // 
             // viewSalesNotEnc
             // 
+            this.viewSalesNotEnc.AllowUserToAddRows = false;
+            this.viewSalesNotEnc.AllowUserToDeleteRows = false;
             this.viewSalesNotEnc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.viewSalesNotEnc.Location = new System.Drawing.Point(12, 96);
+            this.viewSalesNotEnc.MultiSelect = false;
             this.viewSalesNotEnc.Name = "viewSalesNotEnc";
             this.viewSalesNotEnc.RowTemplate.Height = 25;
-            this.viewSalesNotEnc.Size = new System.Drawing.Size(783, 363);
+            this.viewSalesNotEnc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.viewSalesNotEnc.Size = new System.Drawing.Size(943, 363);
             this.viewSalesNotEnc.TabIndex = 7;
+            this.viewSalesNotEnc.SelectionChanged += new System.EventHandler(this.viewSalesNotEnc_SelectionChanged);
             // 
             // viewTrucks
             // 
+            this.viewTrucks.AllowUserToAddRows = false;
+            this.viewTrucks.AllowUserToDeleteRows = false;
             this.viewTrucks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewTrucks.Location = new System.Drawing.Point(801, 96);
+            this.viewTrucks.Location = new System.Drawing.Point(961, 96);
+            this.viewTrucks.MultiSelect = false;
             this.viewTrucks.Name = "viewTrucks";
             this.viewTrucks.RowTemplate.Height = 25;
+            this.viewTrucks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.viewTrucks.Size = new System.Drawing.Size(260, 179);
             this.viewTrucks.TabIndex = 8;
+            this.viewTrucks.SelectionChanged += new System.EventHandler(this.viewTrucks_SelectionChanged);
             // 
             // label1
             // 
@@ -91,12 +102,16 @@ namespace Bebidis
             // 
             // viewTruckers
             // 
+            this.viewTruckers.AllowUserToAddRows = false;
+            this.viewTruckers.AllowUserToDeleteRows = false;
             this.viewTruckers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewTruckers.Location = new System.Drawing.Point(801, 281);
+            this.viewTruckers.Location = new System.Drawing.Point(961, 280);
             this.viewTruckers.Name = "viewTruckers";
             this.viewTruckers.RowTemplate.Height = 25;
+            this.viewTruckers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.viewTruckers.Size = new System.Drawing.Size(260, 179);
             this.viewTruckers.TabIndex = 11;
+            this.viewTruckers.SelectionChanged += new System.EventHandler(this.viewTruckers_SelectionChanged);
             // 
             // salesNum
             // 
@@ -132,7 +147,7 @@ namespace Bebidis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 473);
+            this.ClientSize = new System.Drawing.Size(1233, 473);
             this.Controls.Add(this.truckerNum);
             this.Controls.Add(this.truckNum);
             this.Controls.Add(this.Transportador);

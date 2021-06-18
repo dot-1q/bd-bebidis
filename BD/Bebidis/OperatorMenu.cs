@@ -79,5 +79,10 @@ namespace Bebidis
                 viewStock.Columns[6].Width = 180;
             }
         }
+
+        private void OperatorMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormProvider.MainMenu.Show();
+        }
     }
 }

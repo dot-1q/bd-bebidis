@@ -128,5 +128,42 @@ namespace Bebidis
                 dataGridView1.Columns[5].Width = 650;
             }
         }
+
+        private void viewEncomendas_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+            {
+                string queryString = "SELECT * FROM BW.viewEncomendas";
+
+                using (var cmd = new SqlCommand(queryString, cn))
+                {
+                    cn.Open();
+                    var reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        dataGridView1.Visible = true;
+                        DataTable dt = new DataTable();
+                        dt.Load(reader);
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+                // Hard coded width depending on the query
+                dataGridView1.Columns[0].Width = 50;
+                dataGridView1.Columns[1].Width = 100;
+                dataGridView1.Columns[2].Width = 100;
+                dataGridView1.Columns[3].Width = 80;
+                dataGridView1.Columns[4].Width = 80;
+                dataGridView1.Columns[5].Width = 100;
+                dataGridView1.Columns[6].Width = 100;
+                dataGridView1.Columns[7].Width = 500;
+
+
+            }
+        }
+
+        private void ManagerMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormProvider.MainMenu.Show();
+        }
     }
 }

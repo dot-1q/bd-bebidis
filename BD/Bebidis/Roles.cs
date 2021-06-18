@@ -18,6 +18,113 @@ namespace Bebidis
 
         private void Roles_Load(object sender, EventArgs e)
         {
+            updateAllGrids();
+            viewOperators.ClearSelection();
+            viewTruckers.ClearSelection();
+            viewPromotors.ClearSelection();
+        }
+        private void viewPromotors_SelectionChanged(object sender, EventArgs e)
+        {
+            viewOperators.ClearSelection();
+            viewTruckers.ClearSelection();
+
+            if(viewPromotors.SelectedRows.Count > 0)
+            {
+                funcNum.Text = viewPromotors.SelectedRows[0].Cells[0].Value.ToString();
+                funcName.Text = viewPromotors.SelectedRows[0].Cells[1].Value.ToString();
+                funcTel.Text = viewPromotors.SelectedRows[0].Cells[2].Value.ToString();
+                DateTime date = (DateTime) viewPromotors.SelectedRows[0].Cells[3].Value;
+                funcData.Text = date.ToString("yyyy-MM-dd");
+                funcSal.Text = viewPromotors.SelectedRows[0].Cells[4].Value.ToString();
+
+                using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+                {
+                    // get role
+                    string queryString = "SELECT role FROM BW.Login WHERE BW.Login.num_funcionario="+funcNum.Text+";";
+
+                    using (var cmd = new SqlCommand(queryString, cn))
+                    {
+                        cn.Open();
+                        var reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            string role = reader.GetString(0);
+                            funcRole.Text = role;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void viewOperators_SelectionChanged(object sender, EventArgs e)
+        {
+            viewPromotors.ClearSelection();
+            viewTruckers.ClearSelection();
+
+            if (viewOperators.SelectedRows.Count > 0)
+            {
+                funcNum.Text = viewOperators.SelectedRows[0].Cells[0].Value.ToString();
+                funcName.Text = viewOperators.SelectedRows[0].Cells[1].Value.ToString();
+                funcTel.Text = viewOperators.SelectedRows[0].Cells[2].Value.ToString();
+                DateTime date = (DateTime)viewOperators.SelectedRows[0].Cells[3].Value;
+                funcData.Text = date.ToString("yyyy-MM-dd");
+                funcSal.Text = viewOperators.SelectedRows[0].Cells[4].Value.ToString();
+
+                using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+                {
+                    // get role
+                    string queryString = "SELECT role FROM BW.Login WHERE BW.Login.num_funcionario=" + funcNum.Text + ";";
+
+                    using (var cmd = new SqlCommand(queryString, cn))
+                    {
+                        cn.Open();
+                        var reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            string role = reader.GetString(0);
+                            funcRole.Text = role;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void viewTruckers_SelectionChanged(object sender, EventArgs e)
+        {
+            viewPromotors.ClearSelection();
+            viewOperators.ClearSelection();
+
+            if (viewTruckers.SelectedRows.Count > 0)
+            {
+                funcNum.Text = viewTruckers.SelectedRows[0].Cells[0].Value.ToString();
+                funcName.Text = viewTruckers.SelectedRows[0].Cells[1].Value.ToString();
+                funcTel.Text = viewTruckers.SelectedRows[0].Cells[2].Value.ToString();
+                DateTime date = (DateTime)viewTruckers.SelectedRows[0].Cells[3].Value;
+                funcData.Text = date.ToString("yyyy-MM-dd");
+                funcSal.Text = viewTruckers.SelectedRows[0].Cells[4].Value.ToString();
+
+                using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+                {
+                    // get role
+                    string queryString = "SELECT role FROM BW.Login WHERE BW.Login.num_funcionario=" + funcNum.Text + ";";
+
+                    using (var cmd = new SqlCommand(queryString, cn))
+                    {
+                        cn.Open();
+                        var reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            string role = reader.GetString(0);
+                            funcRole.Text = role;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void updateAllGrids()
+        {
             using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
             {
                 // DAtagrid PRomotores
@@ -93,16 +200,73 @@ namespace Bebidis
             }
         }
 
-        private void insertWorker_Click(object sender, EventArgs e)
+        private void AddAlterWorker_Click(object sender, EventArgs e)
         {
-            //insert funcionario
-            new RoleMenu().Show();
+            string num_func = funcNum.Text;
+            string funcionario = funcName.Text;
+            string tel = funcTel.Text;
+            string data = funcData.Text;
+            string sal = funcSal.Text;
+            string cargo = funcRole.Text;
+            string zona = funcZona.Text;
+            string responsvel = funcRes.Text;
+
+
+            using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+            {
+                string queryString = "SELECT num_funcionario from BW.Funcionario WHERE n_telemovel=" + tel+";";
+
+                using (var cmd = new SqlCommand(queryString, cn))
+                {
+                    cn.Open();
+                    var reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        //significa o produto existe, logo é update
+                        cn.Close();
+                        queryString = "EXEC BW.p_updateFunc @num_func="+num_func+",@nome='"+funcionario+"',@n_telemovel="+tel+",@data='"+data+"',@sal="+sal+",@cargo='"+cargo+"',@zona='"+zona+"',@responsavel="+responsvel+"";
+                        using (SqlConnection cn2 = new SqlConnection(DB.getDB().getConnectionString()))
+                        {
+                            using (var cmd2 = new SqlCommand(queryString, cn2))
+                            {
+                                cn2.Open();
+                                cmd2.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //signiffica que não existe, logo é insert
+                        cn.Close();
+                        queryString = "EXEC BW.p_createFunc @nome='" + funcionario + "',@n_telemovel=" + tel + ",@data='" + data + "',@sal=" + sal + ",@cargo='" + cargo +"',@zona='" + zona + "',@responsavel=" + responsvel + "";
+                        using (SqlConnection cn2 = new SqlConnection(DB.getDB().getConnectionString()))
+                        {
+                            using (var cmd2 = new SqlCommand(queryString, cn2))
+                            {
+                                cn2.Open();
+                                cmd2.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+            }
+            updateAllGrids();
         }
 
-        private void updateRole_Click(object sender, EventArgs e)
+        private void fireWorker_Click(object sender, EventArgs e)
         {
-            //update funcionario
-            new RoleMenu().Show();
+            using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+            {
+               
+                string queryString = "DELETE FROM BW.Funcionario WHERE BW.Funcionario.num_funcionario=" + funcNum.Text + ";";
+
+                using (var cmd = new SqlCommand(queryString, cn))
+                {
+                    cn.Open();
+                    var reader = cmd.ExecuteReader();
+                }
+            }
+            updateAllGrids();
         }
     }
 }

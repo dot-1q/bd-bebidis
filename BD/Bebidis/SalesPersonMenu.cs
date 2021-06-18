@@ -133,13 +133,33 @@ namespace Bebidis
                         using (var cmd = new SqlCommand(queryString, cn))
                         {
                             cn.Open();
-                            cmd.ExecuteNonQuery();
+                            try
+                            {
+                                cmd.ExecuteNonQuery();
+                            }
+                            catch(SqlException ex)
+                            {
+
+                                if (ex.Errors[0].Class==17)
+                                {
+                                    MessageBox.Show("Peso Máximo excedido", "Erro de Carga",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        deleteSell(id_venda);
+                                }
+                                else
+                                {
+                                MessageBox.Show("Unidades em Armazém Insuficientes", "Erro de inventário",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    deleteSell(id_venda);
+                                }
+                            }
                             cn.Close();
                         }
                     }
                 }
                 
             }
+            updateAllGrids();
         }
 
         private void makeSellToBuyer()
@@ -204,6 +224,26 @@ namespace Bebidis
                 }
             }
             return id_venda;
+        }
+
+        private void deleteSell(string id_venda)
+        {
+            using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+            {
+                string queryString = "EXEC BW.p_deleteSell @id_venda="+id_venda;
+
+                using (var cmd = new SqlCommand(queryString, cn))
+                {
+                    cn.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+        private void SalesPersonMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormProvider.MainMenu.Show();
         }
     }
 }

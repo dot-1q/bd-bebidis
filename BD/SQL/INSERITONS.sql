@@ -12,9 +12,9 @@ INSERT INTO BW.Armazem (localizacao,n_telefone,n_funcionarios,n_automoveis) VALU
 -- FUNCIONARIOS)
 INSERT INTO BW.Funcionario (nome, n_telemovel, data_nascimento, salario, armazem_trabalha) VALUES ('José Carlos', 934335122, '1969-09-11', 3500, 'Viana do Castelo');
 
-INSERT INTO BW.Funcionario (nome, n_telemovel, data_nascimento, salario, armazem_trabalha) VALUES ('Tiago Barros', 934335122, '1969-09-11', 3500, 'Viana do Castelo');
-INSERT INTO BW.Funcionario (nome, n_telemovel, data_nascimento, salario, armazem_trabalha) VALUES ('Rui Pedro', 934335122, '1969-09-11', 3500, 'Viana do Castelo');
-INSERT INTO BW.Funcionario (nome, n_telemovel, data_nascimento, salario, armazem_trabalha) VALUES ('David Barros', 934335122, '1969-09-11', 3500, 'Viana do Castelo');
+INSERT INTO BW.Funcionario (nome, n_telemovel, data_nascimento, salario, armazem_trabalha) VALUES ('Tiago Barros', 934335123, '1969-09-11', 3500, 'Viana do Castelo');
+INSERT INTO BW.Funcionario (nome, n_telemovel, data_nascimento, salario, armazem_trabalha) VALUES ('Rui Pedro', 934335124, '1969-09-11', 3500, 'Viana do Castelo');
+INSERT INTO BW.Funcionario (nome, n_telemovel, data_nascimento, salario, armazem_trabalha) VALUES ('David Barros', 934335125, '1969-09-11', 3500, 'Viana do Castelo');
 --promotor de vendas
 INSERT INTO BW.Funcionario (nome, n_telemovel, data_nascimento, salario, armazem_trabalha) VALUES ('Tybie MacAnellye', 973358516, '1959-07-23', 892, 'Viana do Castelo');
 INSERT INTO BW.Funcionario (nome, n_telemovel, data_nascimento, salario, armazem_trabalha) VALUES ('Morna Losano', 994199303, '1965-06-26', 1039, 'Viana do Castelo');

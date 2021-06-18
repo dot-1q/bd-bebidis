@@ -34,10 +34,9 @@ namespace Bebidis
             this.setRoles = new System.Windows.Forms.Button();
             this.salesHistory = new System.Windows.Forms.Button();
             this.routesHistory = new System.Windows.Forms.Button();
-            this.salesSelection = new System.Windows.Forms.CheckedListBox();
-            this.routesSelection = new System.Windows.Forms.CheckedListBox();
             this.manageVehicles = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.viewEncomendas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,9 +72,9 @@ namespace Bebidis
             // 
             // salesHistory
             // 
-            this.salesHistory.Location = new System.Drawing.Point(978, 87);
+            this.salesHistory.Location = new System.Drawing.Point(976, 87);
             this.salesHistory.Name = "salesHistory";
-            this.salesHistory.Size = new System.Drawing.Size(145, 45);
+            this.salesHistory.Size = new System.Drawing.Size(145, 110);
             this.salesHistory.TabIndex = 4;
             this.salesHistory.Text = "Histórico de Vendas";
             this.salesHistory.UseVisualStyleBackColor = true;
@@ -83,43 +82,13 @@ namespace Bebidis
             // 
             // routesHistory
             // 
-            this.routesHistory.Location = new System.Drawing.Point(978, 418);
+            this.routesHistory.Location = new System.Drawing.Point(976, 319);
             this.routesHistory.Name = "routesHistory";
-            this.routesHistory.Size = new System.Drawing.Size(145, 45);
+            this.routesHistory.Size = new System.Drawing.Size(145, 110);
             this.routesHistory.TabIndex = 5;
             this.routesHistory.Text = "Histórico de Rotas";
             this.routesHistory.UseVisualStyleBackColor = true;
             this.routesHistory.Click += new System.EventHandler(this.routesHistory_Click);
-            // 
-            // salesSelection
-            // 
-            this.salesSelection.FormattingEnabled = true;
-            this.salesSelection.Items.AddRange(new object[] {
-            "Mais Antigas",
-            "Mais Recentes",
-            "Preço Ascendente",
-            "Preço Descendente",
-            "Por Vendedor",
-            "Por Produto"});
-            this.salesSelection.Location = new System.Drawing.Point(978, 138);
-            this.salesSelection.Name = "salesSelection";
-            this.salesSelection.Size = new System.Drawing.Size(145, 112);
-            this.salesSelection.TabIndex = 8;
-            // 
-            // routesSelection
-            // 
-            this.routesSelection.FormattingEnabled = true;
-            this.routesSelection.Items.AddRange(new object[] {
-            "Mais Antigas",
-            "Mais Recentes",
-            "Ligeiros",
-            "Pesados",
-            "Por Vendedor",
-            "Por Transportador"});
-            this.routesSelection.Location = new System.Drawing.Point(978, 469);
-            this.routesSelection.Name = "routesSelection";
-            this.routesSelection.Size = new System.Drawing.Size(145, 112);
-            this.routesSelection.TabIndex = 9;
             // 
             // manageVehicles
             // 
@@ -133,24 +102,35 @@ namespace Bebidis
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 87);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(945, 494);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // viewEncomendas
+            // 
+            this.viewEncomendas.Location = new System.Drawing.Point(976, 203);
+            this.viewEncomendas.Name = "viewEncomendas";
+            this.viewEncomendas.Size = new System.Drawing.Size(145, 110);
+            this.viewEncomendas.TabIndex = 12;
+            this.viewEncomendas.Text = "Histórico de Encomendas";
+            this.viewEncomendas.UseVisualStyleBackColor = true;
+            this.viewEncomendas.Click += new System.EventHandler(this.viewEncomendas_Click);
             // 
             // ManagerMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 593);
+            this.Controls.Add(this.viewEncomendas);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.manageVehicles);
-            this.Controls.Add(this.routesSelection);
-            this.Controls.Add(this.salesSelection);
             this.Controls.Add(this.routesHistory);
             this.Controls.Add(this.salesHistory);
             this.Controls.Add(this.setRoles);
@@ -158,6 +138,7 @@ namespace Bebidis
             this.Controls.Add(this.manageInventoryAndProducts);
             this.Name = "ManagerMenu";
             this.Text = "Bebidis Warehouse Manager";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManagerMenu_FormClosed);
             this.Load += new System.EventHandler(this.ManagerMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -171,10 +152,9 @@ namespace Bebidis
         private System.Windows.Forms.Button setRoles;
         private System.Windows.Forms.Button salesHistory;
         private System.Windows.Forms.Button routesHistory;
-        private System.Windows.Forms.CheckedListBox salesSelection;
-        private System.Windows.Forms.CheckedListBox routesSelection;
         private System.Windows.Forms.Button manageVehicles;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button viewEncomendas;
     }
 }
 

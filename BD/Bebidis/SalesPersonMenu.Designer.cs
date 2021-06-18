@@ -188,6 +188,7 @@ namespace Bebidis
             this.Controls.Add(this.makeSell);
             this.Name = "SalesPersonMenu";
             this.Text = "Menu Promotor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SalesPersonMenu_FormClosed);
             this.Load += new System.EventHandler(this.SalesPersonMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantity)).EndInit();

@@ -16,12 +16,35 @@ namespace Bebidis
             InitializeComponent();
         }
 
-        private void insertVehicle_Click(object sender, EventArgs e)
+        private void Vehicles_Load(object sender, EventArgs e)
         {
-            new VehicleMenu().Show();
+            updateAllGrids();
         }
 
-        private void Vehicles_Load(object sender, EventArgs e)
+        private void viewVehiclesLig_SelectionChanged(object sender, EventArgs e)
+        {
+            viewVehiclesPes.ClearSelection();
+
+            if (viewVehiclesLig.SelectedRows.Count > 0)
+            {
+                matricula.Text = viewVehiclesLig.SelectedRows[0].Cells[0].Value.ToString();
+                matriculaRemove.Text = viewVehiclesLig.SelectedRows[0].Cells[0].Value.ToString();
+            }
+        }
+
+        private void viewVehiclesPes_SelectionChanged(object sender, EventArgs e)
+        {
+            viewVehiclesLig.ClearSelection();
+
+            if (viewVehiclesPes.SelectedRows.Count > 0)
+            {
+                matricula.Text = viewVehiclesPes.SelectedRows[0].Cells[0].Value.ToString();
+                matriculaRemove.Text = viewVehiclesPes.SelectedRows[0].Cells[0].Value.ToString();
+
+            }
+        }
+
+        private void updateAllGrids()
         {
             using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
             {
@@ -68,6 +91,67 @@ namespace Bebidis
                 viewVehiclesPes.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 cn.Close();
             }
+        }
+
+        private void insertAlterVehicle_Click(object sender, EventArgs e)
+        {
+            string mat = matricula.Text;
+            string carga = cargaBox.Text;
+            using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+            {
+                string queryString = "SELECT * FROM BW.Automoveis WHERE matricula='" + mat+"';";
+
+                using (var cmd = new SqlCommand(queryString, cn))
+                {
+                    cn.Open();
+                    var reader = cmd.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        //significa o automovel existe, logo é update
+                        cn.Close();
+                        queryString = "UPDATE BW.Pesado SET carga = " + carga + " WHERE matricula='" + mat + "';";
+                        using (SqlConnection cn2 = new SqlConnection(DB.getDB().getConnectionString()))
+                        {
+                            using (var cmd2 = new SqlCommand(queryString, cn2))
+                            {
+                                cn2.Open();
+                                cmd2.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //signiffica que não existe, logo é insert
+                        cn.Close();
+                        queryString = "EXEC BW.p_createVehicle @matricula='" + mat + "', @carga=" + carga + "";
+                        using (SqlConnection cn2 = new SqlConnection(DB.getDB().getConnectionString()))
+                        {
+                            using (var cmd2 = new SqlCommand(queryString, cn2))
+                            {
+                                cn2.Open();
+                                cmd2.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+            }
+            updateAllGrids();
+        }
+
+        private void deleteVehicle_Click(object sender, EventArgs e)
+        {
+            string mat = matricula.Text;
+            using (SqlConnection cn = new SqlConnection(DB.getDB().getConnectionString()))
+            {
+                string queryString = "DELETE FROM BW.Automoveis WHERE matricula='" + mat+"';";
+
+                using (var cmd = new SqlCommand(queryString, cn))
+                {
+                    cn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            updateAllGrids();
         }
     }
 }

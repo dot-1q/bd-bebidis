@@ -151,15 +151,15 @@ CREATE TABLE BW.Pesado(
     carga           INT NOT NULL CHECK(carga>=0),
 
     PRIMARY KEY(matricula),
-    FOREIGN KEY(matricula) REFERENCES BW.Automoveis(matricula) ON UPDATE CASCADE,
+    FOREIGN KEY(matricula) REFERENCES BW.Automoveis(matricula) ON UPDATE CASCADE ON DELETE CASCADE,
 );
 CREATE TABLE BW.Ligeiro(
     matricula       VARCHAR(10) NOT NULL,
     utilizado_por   INT NOT NULL,
 
     PRIMARY KEY(matricula),
-    FOREIGN KEY(matricula) REFERENCES BW.Automoveis(matricula) ON UPDATE CASCADE,
-    FOREIGN KEY(utilizado_por) REFERENCES BW.PromotorVendas(num_funcionario) ON UPDATE CASCADE,
+    FOREIGN KEY(matricula) REFERENCES BW.Automoveis(matricula) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY(utilizado_por) REFERENCES BW.Funcionario(num_funcionario) ON UPDATE CASCADE ON DELETE CASCADE,
 );
 CREATE TABLE BW.Rotas(
     id      INT NOT NULL IDENTITY(1,1),
@@ -169,12 +169,12 @@ CREATE TABLE BW.Rotas(
 );
 CREATE TABLE BW.FezRota(
     id      INT NOT NULL,
-    carro_usado VARCHAR(10) NOT NULL,
+    carro_usado VARCHAR(10),
 	data_realizacao 		DATE,
 
     PRIMARY KEY(id,carro_usado,data_realizacao),
     FOREIGN KEY(id) REFERENCES BW.Rotas(id) ON UPDATE CASCADE,
-    FOREIGN KEY(carro_usado) REFERENCES BW.Automoveis(matricula) ON UPDATE CASCADE,
+    FOREIGN KEY(carro_usado) REFERENCES BW.Automoveis(matricula) ON UPDATE CASCADE ON DELETE CASCADE
 );
 CREATE TABLE BW.ZonasRotas(
     id      INT NOT NULL,
@@ -191,5 +191,5 @@ CREATE TABLE BW.Login(
 	FOREIGN KEY(num_funcionario) REFERENCES BW.Funcionario(num_funcionario) ON UPDATE CASCADE ON DELETE CASCADE
 )
 -- ALTER TABLES PARA FOREIGN KEYS
-ALTER TABLE BW.Encomenda    ADD FOREIGN KEY(veiculo_transp)     REFERENCES BW.Pesado(matricula);
+ALTER TABLE BW.Encomenda    ADD FOREIGN KEY(veiculo_transp)     REFERENCES BW.Pesado(matricula) ON DELETE SET NULL;
 ALTER TABLE BW.Contem 		ADD FOREIGN KEY(num_venda)		REFERENCES BW.Venda(numero);
