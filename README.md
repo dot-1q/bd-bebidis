@@ -1,4 +1,5 @@
 ### Bebidis Entity-Relationship Diagram
+17.8/20
 
 <img src="DER and REL/bebidis.png" alt=""/>
 
